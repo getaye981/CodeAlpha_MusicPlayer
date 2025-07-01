@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="music-player">
+        <div class="music-info">
+            <div class="title" id="song-title">Song Title</div>
+            <div class="artist" id="song-artist">Artist Name</div>
+        </div>
+
+        <div class="cover">
+            <img src="https://via.placeholder.com/200" alt="Album Cover" id="cover-image">
+        </div>
+
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="time-info">
+            <span id="current-time">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
+
+        <div class="controls">
+            <button id="prev-btn"><i>⏮</i></button>
+            <button id="play-btn" class="play-btn"><i>▶</i></button>
+            <button id="next-btn"><i>⏭</i></button>
+        </div>
+
+        <div class="volume-control">
+            <i>🔊</i>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.7">
+        </div>
+
+        <div class="playlist" id="playlist">
+            <!-- Playlist items will be added dynamically -->
+        </div>
+
+        <div class="settings">
+            <label>
+                <input type="checkbox" id="autoplay"> Autoplay
+            </label>
+            <label>
+                <input type="checkbox" id="shuffle"> Shuffle
+            </label>
+        </div>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>

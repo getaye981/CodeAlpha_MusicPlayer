@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-player {
+    width: 350px;
+    background: rgba(16, 236, 71, 0.08);
+    border-radius: 16px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(218, 15, 15, 0.1);
+}
+
+.music-info {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.music-info .title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.music-info .artist {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.cover {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: rotate 20s linear infinite;
+    animation-play-state: paused; /* Start paused */
+    transform-origin: center center;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* When music is playing, resume animation */
+.music-playing .cover img {
+    animation-play-state: running;
+}
+.progress-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    height: 6px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.progress {
+    background: #ff6b6b;
+    height: 100%;
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 0 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.controls button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.controls .play-btn {
+    background: #ff6b6b;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+}
+
+.controls .play-btn:hover {
+    background: #ff5252;
+    transform: scale(1.05);
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.volume-control i {
+    margin-right: 10px;
+    color: #ccc;
+}
+
+.volume-control input {
+    flex: 1;
+    height: 5px;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    outline: none;
+}
+
+.volume-control input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.playlist {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.playlist::-webkit-scrollbar {
+    width: 5px;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 5px;
+}
+
+.playlist-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.playlist-item.active {
+    background: rgba(255, 107, 107, 0.2);
+}
+
+.playlist-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.playlist-item-info {
+    flex: 1;
+}
+
+.playlist-item-info .title {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.playlist-item-info .artist {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.settings {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.settings label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.settings input[type="checkbox"] {
+    margin-right: 5px;
+}
